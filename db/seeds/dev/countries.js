@@ -1,3 +1,18 @@
+const resettlementData = {
+  destCountry: "Australia"
+  grandTotal: null,
+  originCountry: {
+    name: "Afghanistan",
+    individualTotal: 826,
+    totalMinors: 366
+  }
+  originCountry: {
+    name: "Syrian Arab Rep.",
+    individualTotal: 81,
+    totalMinors: 39
+  }
+}
+
 exports.seed = function(knex, Promise) {
   return knex('demographics').del() 
     .then(() => knex('countries').del()) 
