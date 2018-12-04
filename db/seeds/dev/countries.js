@@ -16,7 +16,6 @@ exports.seed = function(knex, Promise) {
               total_minors: 8000, 
               dest_country_id: country[0] 
             }
-            // { origin_country: 'Sudan', individual_total: 10000, total_minors: 4000, dest_country_id: country[0] }
           ])
         })
         .then(() => console.log('Seeding complete!'))
