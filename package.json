@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "db": "^1.1.1",
     "express": "^4.16.4",
     "knex": "^0.15.2",
     "pg": "^7.7.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haub/byob.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Haub/byob/issues"
+  },
+  "homepage": "https://github.com/Haub/byob#readme"
 }
