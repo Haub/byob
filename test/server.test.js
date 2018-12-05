@@ -42,7 +42,7 @@ describe('Server File', () => {
         })
     });
   });
-  
+
   describe('/api/v1/demographics', () => {
     it('should return a 200 status', (done) => {
       chai.request(app)
@@ -53,13 +53,36 @@ describe('Server File', () => {
         done()
     });
 
- 
+    it('should add a new demograhics entry for an origin countru when a post request is made', (done) => {
+      const newDemographic = {
+        dest_country: 'La La Land', 
+        grand_total: '1200'
+      }
+      chai.request(app)
+        .post('/api/v1/demographics')
+        .send(newDemographic)
+        .end((error, response) => {
+          expect(response).to.have.status(201)
+          // expect().to.deep.include(newCountry)
+        })
+        done()
+    });
 
-
+    it('should return 422 if new demographic entry is incomplete', (done) => {
+      const newDemographic = {
+        origin_country: 'Honduras',
+        individual_total: '5000',
+        total_minors: '2100',
+        dest_country_id: 1,
+      }
+      chai.request(app)
+        .post('/api/v1/demographics')
+        .send(newDemographic)
+        .end((error, response) => {
+          expect(response).to.have.status(422)
+        })
+    });
 
   });
-
-
-
 
 });
