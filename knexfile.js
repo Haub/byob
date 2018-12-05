@@ -9,5 +9,9 @@ module.exports = {
       directory: './db/seeds/dev'
     },
     useNullAsDefault: true
+  },
+
+  test: {
+    
   }
 };
