@@ -29,7 +29,7 @@ app.post('/api/v1/countries', (request, response) => {
     if (!newCountry[requiredParameter]) {
       return response
         .status(422)
-        .send({ error: `Expected format: { title: <String>, author: <String> }. You're missing a "${requiredParameter}" property.` });
+        .send({ error: `Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a "${requiredParameter}" property.` });
     }
   }
   
@@ -68,6 +68,14 @@ app.get('/api/v1/demographics', (request, response) => {
 app.post('/api/v1/demographics', (request, response) => {
   const demographics = request.body;
   
+  for (let requiredParameter of ['origin_country', 'individual_total', 'total_minors', 'dest_country_id']) {
+    if (!demographics[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
+
   database('demographics').insert(demographics, 'id')
     .then((demographicsIds) => response.status(201).json({message: `New demographics with id of ${demographicsIds[0]} inserted successfully.`}))
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
@@ -76,6 +84,7 @@ app.post('/api/v1/demographics', (request, response) => {
 //works!
 app.get('/api/v1/demographics/:id', (request, response) => {
   const { id } = request.params;
+
   database('demographics').where('id', id).select()
     .then(demographics => {
       if (demographics.length) {
