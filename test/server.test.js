@@ -15,6 +15,21 @@ describe('Server File', () => {
         done()
     });
 
+    it('should add a new country when a post request is made', (done) => {
+      const newCountry = {
+        dest_country: 'La La Land', 
+        grand_total: '1200'
+      }
+      chai.request(app)
+        .post('/api/v1/countries')
+        .send(newCountry)
+        .end((error, response) => {
+          expect(response).to.have.status(201)
+          // expect().to.deep.include(newCountry)
+        })
+        done()
+    });
+
 
 
   });
