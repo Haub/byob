@@ -1,1245 +1,1100 @@
-// Grand Total for each country
-// Return some of the curly braces so they are uniform
-// Remove  dest_country dupes
-
 const resettlementData = [
-  
   {
-    destCountry: "Argentina",
-    grandTotal: null,
-
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 105,
-      totalMinors: 42
-    }
+    dest_country: "Argentina",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 105,
+        total_minors: 42
+      }
+    ]
   },
 
   {
-    destCountry: "Australia",
-    grandTotal: null,
+    dest_country: "Australia",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Afghanistan",
+        individual_total: 826,
+        total_minors: 366
+      }, 
+
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 81,
+        total_minors: 39
+      },
     
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 826,
-      totalMinors: 366
-    }, 
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 81,
-      totalMinors: 39
-    },
-    
-    originCountry: {
-      name: "Bhutan",
-      individualTotal: 1,
-      totalMinors: 1
-    },
+      {
+        name: "Bhutan",
+        individual_total: 1,
+        total_minors: 1
+      },
   
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 43,
-      totalMinors: 15
-    },
-
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 47,
-      totalMinors: 21
-    },
-
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 386,
-      totalMinors: 161
-    },
-    
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 1306,
-      totalMinors: 714
-    },
-    
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 315,
-      totalMinors: 134
-    },
-   
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 171,
-      totalMinors: 57
-    },
-    
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 28,
-      totalMinors: 5
-    },
-    
-    originCountry: {
-      name: "All others",
-      individualTotal: 571,
-      totalMinors: 242
-    }
-  },
-
-  {  
-    destCountry: "Austria",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "All others",
-      individualTotal: 1,
-      totalMinors: 0
-    },
-
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 253,
-      totalMinors: 130
-    }
-  },  
-
-  {
-    destCountry: "Beligium",
-    grandTotal: null,
-    
-    originCountry: {
+      {
         name: "Sudan",
-        individualTotal: 1,
-        totalMinors: 1
-    },
-  
-    originCountry: {
-      name: "All others",
-      individualTotal: 12,
-      totalMinors: 8
-    },
+        individual_total: 43,
+        total_minors: 15
+      },
+
+      {
+        name: "Iraq",
+        individual_total: 47,
+        total_minors: 21
+      },
+
+      {
+        name: "Eritrea",
+        individual_total: 386,
+        total_minors: 161
+      },
     
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 169,
-      totalMinors: 69
-    },
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 1306,
+        total_minors: 714
+      },
     
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 1357,
-      totalMinors: 711
-    }
-  },
-  
-  {
-    destCountry: "Brazil",
-    grandTotal: null,
+      {
+        name: "Myanmar",
+        individual_total: 315,
+        total_minors: 134
+      },
+   
+      {
+        name: "Somalia",
+        individual_total: 171,
+        total_minors: 57
+      },
     
-    originCountry: {
-      name: "All others",
-      individualTotal: 2,
-      totalMinors: 0
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 28,
+        total_minors: 5
+      },
+    
+      {
+        name: "All others",
+        individual_total: 571,
+        total_minors: 242
+      }
+    ]
   },
 
   {
-    destCountry: "Canada",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 128,
-      totalMinors: 64
-    },
-   
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 401,
-      totalMinors: 171
-    },
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 1327,
-      totalMinors: 807
-    },
-    
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 529,
-      totalMinors: 253
-    },
-   
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 102,
-      totalMinors: 47
-    },
-    
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 356,
-      totalMinors: 187
-    },
-    
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 64,
-      totalMinors: 19
-    },
-   
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 57,
-      totalMinors: 25
-    },
+    dest_country: "Austria",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "All others",
+        individual_total: 1,
+        total_minors: 0
+      },
 
-    originCountry: {
-      name: "All others",
-      individualTotal: 909,
-      totalMinors: 482
-    },
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 253,
+        total_minors: 130
+      }
+    ]
+  },
+
+  {
+    dest_country: "Beligium",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Sudan",
+        individual_total: 1,
+        total_minors: 1
+      },
+  
+      {
+        name: "All others",
+        individual_total: 12,
+        total_minors: 8
+      },
     
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 245,
-      totalMinors: 122
-    }
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 169,
+        total_minors: 69
+      },
+    
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 1357,
+        total_minors: 711
+      }
+    ]
+  },
+  
+  {
+    dest_country: "Brazil",
+    grand_total: null,
+    origin_countries: [
+      {
+          name: "All others",
+          individual_total: 2,
+          total_minors: 0
+        }
+      ]
+  },
+
+  {
+    dest_country: "Canada",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 128,
+        total_minors: 64
+      },
+   
+      {
+        name: "Iraq",
+        individual_total: 401,
+        total_minors: 171
+      },
+    
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 1327,
+        total_minors: 807
+      },
+    
+      {
+        name: "Eritrea",
+        individual_total: 529,
+        total_minors: 253
+      },
+   
+      {
+        name: "Myanmar",
+        individual_total: 102,
+        total_minors: 47
+      },
+    
+      {
+        name: "Somalia",
+        individual_total: 356,
+        total_minors: 187
+      },
+    
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 64,
+        total_minors: 19
+      },
+   
+      {
+        name: "Afghanistan",
+        individual_total: 57,
+        total_minors: 25
+      },
+
+      {
+        name: "All others",
+        individual_total: 909,
+        total_minors: 482
+      },
+    
+      {
+        name: "Sudan",
+        individual_total: 245,
+        total_minors: 122
+      }
+    ]
   },
 
   {  
-    destCountry: "Chile",
-    grandTotal: null,
+    dest_country: "Chile",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 95,
+        total_minors: 49
+      }
+    ]
+  },
+
+  {
+    dest_country: "Croatia",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 157,
+        total_minors: 84
+      }
+    ]
+  },
+
+  {
+    dest_country: "Cyprus",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 6,
+        total_minors: 2
+      }
+    ]
+  },
+
+  {
+    dest_country: "Estonia",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 143,
+        total_minors: 71
+      },
   
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 95,
-      totalMinors: 49
-    }
+      {
+        name: "All others",
+        individual_total: 6,
+        total_minors: 3
+      }
+    ]
   },
 
   {
-    destCountry: "Croatia",
-    grandTotal: null,
-
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 157,
-      totalMinors: 84
-    }
-  },
-
-  {
-    destCountry: "Cyprus",
-    grandTotal: null,
+    dest_country: "Finland",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Sudan",
+        individual_total: 20,
+        total_minors: 14
+      },
     
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 6,
-      totalMinors: 2
-    }
-  },
-
-  {
-    destCountry: "Estonia",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 143,
-      totalMinors: 71
-    },
-  
-    originCountry: {
-      name: "All others",
-      individualTotal: 6,
-      totalMinors: 3
-    }
-  },
-
-  {
-    destCountry: "Finland",
-    grandTotal: null,
-   
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 20,
-      totalMinors: 14
-    },
-    
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 1,
-      totalMinors: 0
-    },
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 1,
+        total_minors: 0
+      },
  
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 664,
-      totalMinors: 364
-    },
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 664,
+        total_minors: 364
+      },
   
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 5,
-      totalMinors: 2
-    },
+      {
+        name: "Iraq",
+        individual_total: 5,
+        total_minors: 2
+      },
     
-    originCountry: {
-      name: "All others",
-      individualTotal: 46,
-      totalMinors: 17
-    },
+      {
+        name: "All others",
+        individual_total: 46,
+        total_minors: 17
+      },
     
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 11,
-      totalMinors: 5
-    },
+      {
+        name: "Afghanistan",
+        individual_total: 11,
+        total_minors: 5
+      },
    
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 4,
-      totalMinors: 2
-    },
+      {
+        name: "Eritrea",
+        individual_total: 4,
+        total_minors: 2
+      },
     
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 180,
-      totalMinors: 105
-    },
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 180,
+        total_minors: 105
+      },
    
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 14,
-      totalMinors: 8
-    }
+      {
+        name: "Somalia",
+        individual_total: 14,
+        total_minors: 8
+      }
+    ]
   },
 
   {
-    destCountry: "France",
-    grandTotal: null,
+    dest_country: "France",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 4207,
+        total_minors: 2292
+      },
+    
+      {
+        name: "Iraq",
+        individual_total: 25,
+        total_minors: 9
+      },
+    
+      {
+        name: "All others",
+        individual_total: 460,
+        total_minors: 236
+      },
    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 4207,
-      totalMinors: 2292
-    },
+      {
+        name: "Afghanistan",
+        individual_total: 2,
+        total_minors: 1
+      },
     
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 25,
-      totalMinors: 9
-    },
+      {
+        name: "Eritrea",
+        individual_total: 35,
+        total_minors: 11
+      },
     
-    originCountry: {
-      name: "All others",
-      individualTotal: 460,
-      totalMinors: 236
-    },
-   
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 2,
-      totalMinors: 1
-    },
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 27,
+        total_minors: 16
+      },
     
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 35,
-      totalMinors: 11
-    },
+      {
+        name: "Somalia",
+        individual_total: 125,
+        total_minors: 87
+      },
     
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 27,
-      totalMinors: 16
-    },
+      {
+        name: "Sudan",
+        individual_total: 325,
+        total_minors: 168
+      },
     
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 125,
-      totalMinors: 87
-    },
-    
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 325,
-      totalMinors: 168
-    },
-    
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 1,
-      totalMinors: 0
-    }
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 1,
+        total_minors: 0
+      }
+    ]
   },
 
   {
-    destCountry: "Germany",
-    grandTotal: null,
-      
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 14,
-      totalMinors: 3
-    },
+    dest_country: "Germany",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Eritrea",
+        individual_total: 14,
+        total_minors: 3
+      },
     
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 3652,
-      totalMinors: 1771
-    },
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 3652,
+        total_minors: 1771
+      },
     
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 8,
-      totalMinors: 1
-    },
+      {
+        name: "Somalia",
+        individual_total: 8,
+        total_minors: 1
+      },
    
-    originCountry: {
-      name: "All others",
-      individualTotal: 54,
-      totalMinors: 20
-    },
+      {
+        name: "All others",
+        individual_total: 54,
+        total_minors: 20
+      },
     
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 125,
-      totalMinors: 69
-    },
+      {
+        name: "Sudan",
+        individual_total: 125,
+        total_minors: 69
+      },
    
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 4,
-      totalMinors: 3
-    },
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 4,
+        total_minors: 3
+      },
     
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 10,
-      totalMinors: 5
-    }
+      {
+        name: "Iraq",
+        individual_total: 10,
+        total_minors: 5
+      }
+    ]
   },
 
   {
-    destCountry: "Iceland",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 36,
-      totalMinors: 20
-    },
+    dest_country: "Iceland",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Iraq",
+        individual_total: 36,
+        total_minors: 20
+      },
    
-    originCountry: {
-      name: "All others",
-      individualTotal: 14,
-      totalMinors: 3
-    },
+      {
+        name: "All others",
+        individual_total: 14,
+        total_minors: 3
+      },
     
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 21,
-      totalMinors: 12
-    }
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 21,
+        total_minors: 12
+      }
+    ]
   },
 
   {
-    destCountry: "Ireland",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 303,
-      totalMinors: 169
-    },
+    dest_country: "Ireland",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 303,
+        total_minors: 169
+      },
    
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 5,
-      totalMinors: 0
-    }
+      {
+        name: "Iraq",
+        individual_total: 5,
+        total_minors: 0
+      }
+    ]
   },
 
   {
-    destCountry: "Italy",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "All others",
-      individualTotal: 56,
-      totalMinors: 22
-    },
+    dest_country: "Italy",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "All others",
+        individual_total: 56,
+        total_minors: 22
+      },
   
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 1062,
-      totalMinors: 592
-    },
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 1062,
+        total_minors: 592
+      },
 
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 270,
-      totalMinors: 123
-    },
+      {
+        name: "Eritrea",
+        individual_total: 270,
+        total_minors: 123
+      },
   
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 4,
-      totalMinors: 0
-    }
+      {
+        name: "Iraq",
+        individual_total: 4,
+        total_minors: 0
+      }
+    ]
   },
 
   {
-    destCountry: "Japan",
-    grandTotal: null,
+    dest_country: "Japan",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Myanmar",
+        individual_total: 39,
+        total_minors: 18
+      }
+    ]
+  },
   
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 39,
-      totalMinors: 18
-    }
+  {
+    dest_country: "Latvia",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 65,
+        total_minors: 37
+      }
+    ]
   },
+
+  {
+    dest_country: "Lithuania",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 191,
+        total_minors: 102
+      },
+   
+      {
+        name: "All others",
+        individual_total: 9,
+        total_minors: 1
+      }
+    ]
+  },
+
+  {
+    dest_country: "Luxembourg",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 216,
+        total_minors: 108
+      },
+   
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 1,
+        total_minors: 0
+      },
+
+      {
+        name: "Iraq",
+        individual_total: 2,
+        total_minors: 0
+      }
+    ]
+  },
+
+  {
+    dest_country: "Malta",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 11,
+        total_minors: 6
+      }
+    ]
+  },
+
+  {
+    dest_country: "Monaco",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Iraq",
+        individual_total: 30,
+        total_minors: 12
+      }
+    ]
+  },
+
+  {
+    dest_country: "Netherlands",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Somalia",
+        individual_total: 7,
+        total_minors: 5
+      },
+    
+      {
+        name: "Iraq",
+        individual_total: 9,
+        total_minors: 2
+      },
+    
+      {
+        name: "Sudan",
+        individual_total: 7,
+        total_minors: 5
+      },
+    
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 2835,
+        total_minors: 1479
+      },
+   
+      {
+        name: "All others",
+        individual_total: 57,
+        total_minors: 27
+      },
+    
+      {
+        name: "Eritrea",
+        individual_total: 2,
+        total_minors: 1
+      },
+    
+      {
+        name: "Afghanistan",
+        individual_total: 1,
+        total_minors: 1
+      },
+    
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 3,
+        total_minors: 0
+      },
+    
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 182,
+        total_minors: 98
+      }
+    ]
+  },
+
+  {
+    dest_country: "New Zealand",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Eritrea",
+        individual_total: 2,
+        total_minors: 2
+      },
+
+      {
+        name: "Afghanistan",
+        individual_total: 28,
+        total_minors: 15
+      },
+   
+      {
+        name: "Myanmar",
+        individual_total: 177,
+        total_minors: 74
+      },
+   
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 10,
+        total_minors: 3
+      },
+   
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 3,
+        total_minors: 1
+      },
+    
+      {
+        name: "Somalia",
+        individual_total: 20,
+        total_minors: 8
+      },
+   
+      {
+        name: "Iraq",
+        individual_total: 53,
+        total_minors: 13
+      },
+   
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 678,
+        total_minors: 434
+      },
+   
+      {
+        name: "All others",
+        individual_total: 338,
+        total_minors: 148
+      }
+    ]
+  },
+
+  {
+    dest_country: "Norway",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "All others",
+        individual_total: 50,
+        total_minors: 30
+      },
+   
+      {
+        name: "Myanmar",
+        individual_total: 5,
+        total_minors: 3
+      },
   
-  {
-    destCountry: "Latvia",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 65,
-      totalMinors: 37
-    }
-  },
-
-  {
-    destCountry: "Lithuania",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 191,
-      totalMinors: 102
-    },
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 1,
+        total_minors: 0
+      },
    
-    originCountry: {
-      name: "All others",
-      individualTotal: 9,
-      totalMinors: 1
-    }
-  },
-
-  {
-    destCountry: "Luxembourg",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 216,
-      totalMinors: 108
-    },
-   
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 1,
-      totalMinors: 0
-    },
-
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 2,
-      totalMinors: 0
-    }
-  },
-
-  {
-    destCountry: "Malta",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 11,
-      totalMinors: 6
-    }
-  },
-
-  {
-    destCountry: "Monaco",
-    grandTotal: null,
-   
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 30,
-      totalMinors: 12
-    }
-  },
-
-  {
-    destCountry: "Netherlands",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 7,
-      totalMinors: 5
-    },
-    
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 9,
-      totalMinors: 2
-    },
-    
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 7,
-      totalMinors: 5
-    },
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 2835,
-      totalMinors: 1479
-    },
-   
-    originCountry: {
-      name: "All others",
-      individualTotal: 57,
-      totalMinors: 27
-    },
-    
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 2,
-      totalMinors: 1
-    },
-    
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 1,
-      totalMinors: 1
-    },
-    
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 3,
-      totalMinors: 0
-    },
-    
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 182,
-      totalMinors: 98
-    }
-  },
-
-  {
-    destCountry: "New Zealand",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 2,
-      totalMinors: 2
-    },
-
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 28,
-      totalMinors: 15
-    },
-   
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 177,
-      totalMinors: 74
-    },
-   
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 10,
-      totalMinors: 3
-    },
-   
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 3,
-      totalMinors: 1
-    },
-    
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 20,
-      totalMinors: 8
-    },
-   
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 53,
-      totalMinors: 13
-    },
-   
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 678,
-      totalMinors: 434
-    },
-   
-    originCountry: {
-      name: "All others",
-      individualTotal: 338,
-      totalMinors: 148
-    }
-  },
-
-  {
-    destCountry: "Norway",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "All others",
-      individualTotal: 50,
-      totalMinors: 30
-    },
-   
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 5,
-      totalMinors: 3
-    },
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 31,
+        total_minors: 15
+      },
   
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 1,
-      totalMinors: 0
-    },
-   
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 31,
-      totalMinors: 15
-    },
-  
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 9,
-      totalMinors: 6
-    },
+      {
+        name: "Somalia",
+        individual_total: 9,
+        total_minors: 6
+      },
     
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 8,
-      totalMinors: 2
-    },
+      {
+        name: "Iraq",
+        individual_total: 8,
+        total_minors: 2
+      },
 
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 19,
-      totalMinors: 12
-    },
+      {
+        name: "Sudan",
+        individual_total: 19,
+        total_minors: 12
+      },
  
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 3002,
-      totalMinors: 1831
-    }
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 3002,
+        total_minors: 1831
+      }
+    ]
   },
 
   {
-    destCountry: "Portugal",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 1,
-      totalMinors: 0
-    },
+    dest_country: "Portugal",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Somalia",
+        individual_total: 1,
+        total_minors: 0
+      },
   
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 221,
-      totalMinors: 139
-    },
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 221,
+        total_minors: 139
+      },
     
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 6,
-      totalMinors: 1
-    },
+      {
+        name: "Sudan",
+        individual_total: 6,
+        total_minors: 1
+      },
     
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 1,
-      totalMinors: 0
-    }
+      {
+        name: "Eritrea",
+        individual_total: 1,
+        total_minors: 0
+      }
+    ]
   },
 
   {
-    destCountry: "Rep. of Korea",
-    grandTotal: null,
+    dest_country: "Rep. of Korea",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "All others",
+        individual_total: 24,
+        total_minors: 0
+      },
     
-    originCountry: {
-      name: "All others",
-      individualTotal: 24,
-      totalMinors: 0
-    },
-    
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 42,
-      totalMinors: 26
-    }
+      {
+        name: "Myanmar",
+        individual_total: 42,
+        total_minors: 26
+      }
+    ]
   },
 
   {
-    destCountry: "Romania",
-    grandTotal: null,
-
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 48,
-      totalMinors: 26
-    }
+    dest_country: "Romania",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 48,
+        total_minors: 26
+      }
+    ]
   },
 
   {
-    destCountry: "Slovenia",
-    grandTotal: null,
-
-   
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 67,
-      totalMinors: 39
-    }
+    dest_country: "Slovenia",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 67,
+        total_minors: 39
+      }
+    ]
   },
 
   {
-    destCountry: "Spain",
-    grandTotal: null,
-  
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 1369,
-      totalMinors: 782
-    },
+    dest_country: "Spain",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 1369,
+        total_minors: 782
+      },
  
-    originCountry: {
-      name: "All others",
-      individualTotal: 4,
-      totalMinors: 2
-    }
+      {
+        name: "All others",
+        individual_total: 4,
+        total_minors: 2
+      }
+    ]
   },
 
   {
-    destCountry: "Sweden",
-    grandTotal: null,
+    dest_country: "Sweden",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Myanmar",
+        individual_total: 5,
+        total_minors: 3
+      },
+ 
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 5,
+        total_minors: 1
+      },
+
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 888,
+        total_minors: 476
+      },
+  
+      {
+        name: "Iraq",
+        individual_total: 56,
+        total_minors: 19
+      },
+  
+      {
+        name: "Sudan",
+        individual_total: 177,
+        total_minors: 83
+      },
+  
+      {
+        name: "Eritrea",
+        individual_total: 655,
+        total_minors: 244
+      },
+ 
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 2875,
+        total_minors: 1610
+      },
+ 
+      {
+        name: "All others",
+        individual_total: 617,
+        total_minors: 310
+      },
+  
+      {
+        name: "Afghanistan",
+        individual_total: 308,
+        total_minors: 150
+      },
+ 
+      {
+        name: "Somalia",
+        individual_total: 369,
+        total_minors: 182  
+      }
+    ]
+  },
+
+  {
+    dest_country: "Switzerland",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 1307,
+        total_minors: 735
+      },
     
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 5,
-      totalMinors: 3
-    },
+      {
+        name: "All others",
+        individual_total: 15,
+        total_minors: 8
+      },
  
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 5,
-      totalMinors: 1
-    },
-
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 888,
-      totalMinors: 476
-    },
-  
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 56,
-      totalMinors: 19
-    },
-  
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 177,
-      totalMinors: 83
-    },
-  
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 655,
-      totalMinors: 244
-    },
+      {
+        name: "Sudan",
+        individual_total: 9,
+        total_minors: 5
+      },
  
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 2875,
-      totalMinors: 1610
-    },
- 
-    originCountry: {
-      name: "All others",
-      individualTotal: 617,
-      totalMinors: 310
-    },
-  
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 308,
-      totalMinors: 150
-    },
- 
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 369,
-      totalMinors: 182
-    }
+      {
+        name: "Iraq",
+        individual_total: 1,
+        total_minors: 0
+      }
+    ]
   },
 
   {
-    destCountry: "Switzerland",
-    
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 1307,
-      totalMinors: 735
-    },
-    
-    originCountry: {
-      name: "All others",
-      individualTotal: 15,
-      totalMinors: 8
-    },
+    dest_country: "United Kingdom of Great Britain and Northern Ireland",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Eritrea",
+        individual_total: 42,
+        total_minors: 29
+      },
+  
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 263,
+        total_minors: 117
+      },
  
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 9,
-      totalMinors: 5
-    },
+      {
+        name: "Somalia",
+        individual_total: 267,
+        total_minors: 140
+      },
  
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 1,
-      totalMinors: 0
-    }
+      {
+        name: "Sudan",
+        individual_total: 460,
+        total_minors: 261
+      },
+
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 40,
+        total_minors: 18
+      },
+ 
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 7072,
+        total_minors: 3520
+      },
+ 
+      {
+        name: "Iraq",
+        individual_total: 650,
+        total_minors: 338
+      },
+  
+      {
+        name: "All others",
+        individual_total: 328,
+        total_minors: 154
+      },
+  
+      {
+        name: "Afghanistan",
+        individual_total: 96,
+        total_minors: 53
+      }
+    ]
   },
 
   {
-    destCountry: "United Kingdom of Great Britain and Northern Ireland",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 42,
-      totalMinors: 29
-    },
+    dest_country: "United States of America",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "Iraq",
+        individual_total: 1698,
+        total_minors: 801
+      },
+ 
+      {
+        name: "All others",
+        individual_total: 1994,
+        total_minors: 883
+      },
   
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 263,
-      totalMinors: 117
-    },
+      {
+        name: "Sudan",
+        individual_total: 887,
+        total_minors: 485
+      },
  
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 267,
-      totalMinors: 140
-    },
+      {
+        name: "Eritrea",
+        individual_total: 999,
+        total_minors: 489
+      },
  
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 460,
-      totalMinors: 261
-    },
-
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 40,
-      totalMinors: 18
-    },
- 
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 7072,
-      totalMinors: 3520
-    },
- 
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 650,
-      totalMinors: 338
-    },
+      {
+        name: "Syrian Arab Rep.",
+        individual_total: 3942,
+        total_minors: 2226
+      },
   
-    originCountry: {
-      name: "All others",
-      individualTotal: 328,
-      totalMinors: 154
-    },
+      {
+        name: "Afghanistan",
+        individual_total: 840,
+        total_minors: 421
+      },
   
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 96,
-      totalMinors: 53
-    }
+      {
+        name: "Somalia",
+        individual_total: 1237,
+        total_minors: 651
+      },
+  
+      {
+        name: "Myanmar",
+        individual_total: 4661,
+        total_minors: 2067
+      },
+  
+      {
+        name: "Iran (Islamic Rep. of)",
+        individual_total: 627,
+        total_minors: 123
+      },
+  
+      {
+        name: "Dem. Rep. of the Congo",
+        individual_total: 9759,
+        total_minors: 5052
+      },
+  
+      {
+        name: "Bhutan",
+        individual_total: 138,
+        total_minors: 74
+      }
+    ]
   },
 
   {
-    destCountry: "United States of America",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "Iraq",
-      individualTotal: 1698,
-      totalMinors: 801
-    },
- 
-    originCountry: {
-      name: "All others",
-      individualTotal: 1994,
-      totalMinors: 883
-    },
-  
-    originCountry: {
-      name: "Sudan",
-      individualTotal: 887,
-      totalMinors: 485
-    },
- 
-    originCountry: {
-      name: "Eritrea",
-      individualTotal: 999,
-      totalMinors: 489
-    },
- 
-    originCountry: {
-      name: "Syrian Arab Rep.",
-      individualTotal: 3942,
-      totalMinors: 2226
-    },
-  
-    originCountry: {
-      name: "Afghanistan",
-      individualTotal: 840,
-      totalMinors: 421
-    },
-  
-    originCountry: {
-      name: "Somalia",
-      individualTotal: 1237,
-      totalMinors: 651
-    },
-  
-    originCountry: {
-      name: "Myanmar",
-      individualTotal: 4661,
-      totalMinors: 2067
-    },
-  
-    originCountry: {
-      name: "Iran (Islamic Rep. of)",
-      individualTotal: 627,
-      totalMinors: 123
-    },
-  
-    originCountry: {
-      name: "Dem. Rep. of the Congo",
-      individualTotal: 9759,
-      totalMinors: 5052
-    },
-  
-    originCountry: {
-      name: "Bhutan",
-      individualTotal: 138,
-      totalMinors: 74
-    }
-  },
-
-  {
-    destCountry: "Uruguay",
-    grandTotal: null,
-    
-    originCountry: {
-      name: "All others",
-      individualTotal: 16,
-      totalMinors: 5
-    }
+    dest_country: "Uruguay",
+    grand_total: null,
+    origin_countries: [
+      {
+        name: "All others",
+        individual_total: 16,
+        total_minors: 5
+      }
+    ]
   } 
 ]
-
-
-//   const resettlementArrays = [
-//   [ 'Syrian Arab Rep.', 'Argentina',  42, 105 ],
-//   [ 'Afghanistan',  'Australia',  366,  826 ],
-//   [ 'Syrian Arab Rep.', 'Australia',  39, 81 ],
-//   [ 'Bhutan', 'Australia',  1,  1 ],
-//   [ 'Sudan',  'Australia',  15, 43 ],
-//   [ 'Iraq', 'Australia',  21, 47 ],
-//   [ 'Eritrea',  'Australia',  161,  386 ],
-//   [ 'Dem. Rep. of the Congo', 'Australia',  714,  1306 ],
-//   [ 'Myanmar',  'Australia',  134,  315 ],
-//   [ 'Somalia',  'Australia',  57, 171 ],
-//   [ 'Iran (Islamic Rep. of)', 'Australia',  5,  28 ],
-//   [ 'All others', 'Australia',  242,  571 ],
-//   [ 'All others', 'Austria',  0,  1 ],
-//   [ 'Syrian Arab Rep.', 'Austria',  130,  253 ],
-//   [ 'Sudan',  'Belgium',  1,  1 ],
-//   [ 'All others', 'Belgium',  8,  12 ],
-//   [ 'Dem. Rep. of the Congo', 'Belgium',  69, 169 ],
-//   [ 'Syrian Arab Rep.', 'Belgium',  711,  1357 ],
-//   [ 'All others', 'Brazil', 0,  2 ],
-//   [ 'Dem. Rep. of the Congo', 'Canada', 64, 128 ],
-//   [ 'Iraq', 'Canada', 171, 401 ],
-//   [ 'Syrian Arab Rep.', 'Canada', 807, 1327 ],
-//   [ 'Eritrea', 'Canada',  253,  529 ],
-//   [ 'Myanmar', 'Canada',  47, 102 ],
-//   [ 'Somalia', 'Canada',  187,  356 ],
-//   [ 'Iran (Islamic Rep. of)', 'Canada', 19, 64 ],
-//   [ 'Afghanistan',  'Canada', 25, 57 ],
-//   [ 'All others', 'Canada', 482,  909 ],
-//   [ 'Sudan',  'Canada', 122,  245 ],
-//   [ 'Syrian Arab Rep.', 'Chile',  49, 95 ],
-//   [ 'Syrian Arab Rep.', 'Croatia',  84, 157 ],
-//   [ 'Syrian Arab Rep.', 'Cyprus', 2,  6 ],
-//   [ 'Syrian Arab Rep.', 'Estonia',  71, 143 ],
-//   [ 'All others', 'Estonia',  3,  6 ],
-//   [ 'Sudan',  'Finland',  14, 20 ],
-//   [ 'Iran (Islamic Rep. of)', 'Finland',  0,  1 ],
-//   [ 'Syrian Arab Rep.', 'Finland',  364,  664 ],
-//   [ 'Iraq', 'Finland',  2,  5 ],
-//   [ 'All others', 'Finland',  17, 46 ],
-//   [ 'Afghanistan', 'Finland', 5,  11 ],
-//   [ 'Eritrea', 'Finland', 2,  4 ],
-//   [ 'Dem. Rep. of the Congo', 'Finland',  105,  180 ],
-//   [ 'Somalia', 'Finland', 8, 14 ],
-//   [ 'Syrian Arab Rep.', 'France', 2292, 4207 ],
-//   [ 'Iraq', 'France', 9,  25 ],
-//   [ 'All others', 'France', 236,  460 ],
-//   [ 'Afghanistan',  'France', 1,  2 ],
-//   [ 'Eritrea',  'France', 11, 35 ],
-//   [ 'Dem. Rep. of the Congo', 'France', 16, 27 ],
-//   [ 'Somalia',  'France', 87, 125 ],
-//   [ 'Sudan',  'France', 168,  325 ],
-//   [ 'Iran (Islamic Rep. of)', 'France', 0,  1 ],
-//   [ 'Eritrea',  'Germany',  3,  14 ],
-//   [ 'Syrian Arab Rep.', 'Germany',  1771, 3652 ],
-//   [ 'Somalia',  'Germany',  1,  8 ],
-//   [ 'All others', 'Germany',  20, 54 ],
-//   [ 'Sudan',  'Germany',  69, 125 ],
-//   [ 'Iran (Islamic Rep. of)', 'Germany',  3,  4 ],
-//   [ 'Iraq', 'Germany',  5,  10 ],
-//   [ 'Iraq', 'Iceland',  20, 36 ],
-//   [ 'All others', 'Iceland',  3,  14 ],
-//   [ 'Syrian Arab Rep.', 'Iceland',  12, 21 ],
-//   [ 'Syrian Arab Rep.', 'Ireland',  169,  303 ],
-//   [ 'Iraq', 'Ireland',  0,  5 ],
-//   [ 'All others', 'Italy',  22, 56 ],
-//   [ 'Syrian Arab Rep.', 'Italy',  592,  1062 ],
-//   [ 'Eritrea',  'Italy',  123,  270 ],
-//   [ 'Iraq', 'Italy',  0,  4 ],
-//   [ 'Myanmar',  'Japan',  18, 39 ],
-//   [ 'Syrian Arab Rep.', 'Latvia', 37, 65 ],
-//   [ 'Syrian Arab Rep.', 'Lithuania',  102,  191 ],
-//   [ 'All others', 'Lithuania',  1,  9 ],
-//   [ 'Syrian Arab Rep.', 'Luxembourg', 108,  216 ],
-//   [ 'Iran (Islamic Rep. of)', 'Luxembourg', 0,  1 ],
-//   [ 'Iraq', 'Luxembourg', 0,  2 ],
-//   [ 'Syrian Arab Rep.', 'Malta',  6,  11 ],
-//   [ 'Iraq', 'Monaco', 12, 30 ],
-//   [ 'Somalia',  'Netherlands',  5,  7 ],
-//   [ 'Iraq', 'Netherlands',  2,  9 ],
-//   [ 'Sudan',  'Netherlands',  5,  7 ],
-//   [ 'Syrian Arab Rep.', 'Netherlands',  1479, 2835 ],
-//   [ 'All others', 'Netherlands',  27, 57 ],
-//   [ 'Eritrea',  'Netherlands',  1,  2 ],
-//   [ 'Afghanistan',  'Netherlands',  1,  1 ],
-//   [ 'Iran (Islamic Rep. of)', 'Netherlands',  0,  3 ],
-//   [ 'Dem. Rep. of the Congo', 'Netherlands',  98, 182 ],
-//   [ 'Eritrea',  'New Zealand',  2,  2 ],
-//   [ 'Afghanistan',  'New Zealand',  15, 28 ],
-//   [ 'Myanmar',  'New Zealand',  74, 177 ],
-//   [ 'Iran (Islamic Rep. of)', 'New Zealand',  3,  10 ],
-//   [ 'Dem. Rep. of the Congo', 'New Zealand',  1,  3 ],
-//   [ 'Somalia',  'New Zealand',  8,  20 ],
-//   [ 'Iraq', 'New Zealand',  13, 53 ],
-//   [ 'Syrian Arab Rep.', 'New Zealand',  434,  678 ],
-//   [ 'All others', 'New Zealand',  148,  338 ],
-//   [ 'All others', 'Norway', 30, 50 ],,
-//   [ 'Eritrea',  'Norway', 6,  8 ]
-//   [ 'Afghanistan',  'Norway', 2,  3 ],
-//   [ 'Myanmar',  'Norway', 3,  5 ],
-//   [ 'Iran (Islamic Rep. of)', 'Norway', 0,  1 ],
-//   [ 'Dem. Rep. of the Congo', 'Norway', 15, 31 ],
-//   [ 'Somalia',  'Norway', 6,  9 ],
-//   [ 'Iraq', 'Norway', 2,  8 ],
-//   [ 'Sudan',  'Norway', 12, 19 ],
-//   [ 'Syrian Arab Rep.', 'Norway', 1831, 3002 ],
-//   [ 'Somalia',  'Portugal', 0,  1 ],
-//   [ 'Syrian Arab Rep.', 'Portugal', 139,  221 ],
-//   [ 'Sudan',  'Portugal', 1,  6 ],
-//   [ 'Eritrea',  'Portugal', 0,  1 ],
-//   [ 'All others', 'Rep. of Korea',  0,  24 ],
-//   [ 'Myanmar',  'Rep. of Korea',  26, 42 ],
-//   [ 'Syrian Arab Rep.', 'Romania',  26, 48 ],
-//   [ 'Syrian Arab Rep.', 'Slovenia', 39, 67 ],
-//   [ 'Syrian Arab Rep.', 'Spain',  782,  1369 ],
-//   [ 'All others', 'Spain',  2,  4 ],
-//   [ 'Myanmar',  'Sweden', 3,  5 ],
-//   [ 'Iran (Islamic Rep. of)', 'Sweden', 1,  5 ],
-//   [ 'Dem. Rep. of the Congo', 'Sweden', 476,  888 ],
-//   [ 'Iraq', 'Sweden', 19, 56 ],
-//   [ 'Sudan',  'Sweden', 83, 177 ],
-//   [ 'Eritrea',  'Sweden', 244,  655 ],
-//   [ 'Syrian Arab Rep.', 'Sweden', 1610, 2875 ],
-//   [ 'All others', 'Sweden', 310,  617 ],
-//   [ 'Afghanistan',  'Sweden', 150,  308 ],
-//   [ 'Somalia',  'Sweden', 182,  369 ],
-//   [ 'Syrian Arab Rep.', 'Switzerland',  735,  1307 ],
-//   [ 'All others', 'Switzerland',  8,  15 ],
-//   [ 'Sudan',  'Switzerland',  5,  9 ],
-//   [ 'Iraq', 'Switzerland',  0,  1 ],
-//   [ 'Eritrea',  'United Kingdom of Great Britain and Northern Ireland', 29, 42 ],
-//   [ 'Dem. Rep. of the Congo', 'United Kingdom of Great Britain and Northern Ireland', 117,  263 ],
-//   [ 'Somalia',  'United Kingdom of Great Britain and Northern Ireland', 140,  267 ],
-//   [ 'Sudan',  'United Kingdom of Great Britain and Northern Ireland', 261,  460 ],
-//   [ 'Iran (Islamic Rep. of)', 'United Kingdom of Great Britain and Northern Ireland', 18, 40 ],
-//   [ 'Syrian Arab Rep.', 'United Kingdom of Great Britain and Northern Ireland', 3520, 7072 ],
-//   [ 'Iraq', 'United Kingdom of Great Britain and Northern Ireland', 338,  650 ],
-//   [ 'All others', 'United Kingdom of Great Britain and Northern Ireland', 154,  328 ],
-//   [ 'Afghanistan', 'United Kingdom of Great Britain and Northern Ireland',  53, 96 ],
-//   [ 'Iraq', 'United States of America', 801,  1698 ],
-//   [ 'All others', 'United States of America', 883,  1994 ],
-//   [ 'Sudan', 'United States of America',  485,  887 ],
-//   [ 'Eritrea', 'United States of America',  489,  999 ],
-//   [ 'Syrian Arab Rep.', 'United States of America', 2226, 3942 ],
-//   [ 'Afghanistan', 'United States of America',  421,  840 ],
-//   [ 'Somalia', 'United States of America',  651,  1237 ],
-//   [ 'Myanmar', 'United States of America',  2067, 4661 ],
-//   [ 'Iran (Islamic Rep. of)', 'United States of America', 123,  627 ],
-//   [ 'Dem. Rep. of the Congo', 'United States of America', 5052, 9759 ],
-//   [ 'Bhutan', 'United States of America', 74, 138 ],
-//   [ 'All others', 'Uruguay', 5, 16 ]
-// ]
-
-const resettlementData = resettlementArrays.reduce((acc, array) => {
-  const destCountry = array[1];
-  const origCountry = array[0];
-  const totalMinors = array[2];
-  const indivTotal = array[3];
-
-  acc.push({
-    [ destCountry]: { 
-      originCountry: {
-              ame: o rigCoutry,
-              inividalTotal: indiv Total,
-              toalMinors: totalMi
-            n
-              ors
-      }
-    }
-  })
-
-  return acc;
-}, []);
-
-console.log(JSON.stringify(resettlementData));
+module.exports = resettlementData;
