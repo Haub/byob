@@ -40,6 +40,7 @@ describe('Server File', () => {
         .end((error, response) => {
           expect(response).to.have.status(422)
         })
+        done()
     });
   });
 
@@ -53,7 +54,7 @@ describe('Server File', () => {
         done()
     });
 
-    it('should add a new demograhics entry for an origin countru when a post request is made', (done) => {
+    it('should add a new demograhics entry for an origin country when a post request is made', (done) => {
       const newDemographic = {
         dest_country: 'La La Land', 
         grand_total: '1200'
@@ -75,12 +76,22 @@ describe('Server File', () => {
         total_minors: '2100',
         dest_country_id: 1,
       }
+
+      for (let requiredParameter of ['origin_country', 'individual_total', 'total_minors', 'dest_country_id']) {
+        if (!newDemographic[requiredParameter]) {
+          return response
+            .status(422)
+            .send({ error: `Expected format: { title: <String>, author: <String> }. You're missing a "${requiredParameter}" property.` });
+        }
+      }
+
       chai.request(app)
         .post('/api/v1/demographics')
         .send(newDemographic)
         .end((error, response) => {
           expect(response).to.have.status(422)
         })
+        done()
     });
 
   });
