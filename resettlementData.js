@@ -1,7 +1,7 @@
 const resettlementData = [
   {
     dest_country: "Argentina",
-    grand_total: null,
+    grand_total: 105,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -13,7 +13,7 @@ const resettlementData = [
 
   {
     dest_country: "Australia",
-    grand_total: null,
+    grand_total: 3775,
     origin_countries: [
       {
         name: "Afghanistan",
@@ -85,7 +85,7 @@ const resettlementData = [
 
   {
     dest_country: "Austria",
-    grand_total: null,
+    grand_total: 254,
     origin_countries: [
       {
         name: "All others",
@@ -103,7 +103,7 @@ const resettlementData = [
 
   {
     dest_country: "Beligium",
-    grand_total: null,
+    grand_total: 1539,
     origin_countries: [
       {
         name: "Sudan",
@@ -133,7 +133,7 @@ const resettlementData = [
   
   {
     dest_country: "Brazil",
-    grand_total: null,
+    grand_total: 2,
     origin_countries: [
       {
           name: "All others",
@@ -145,7 +145,7 @@ const resettlementData = [
 
   {
     dest_country: "Canada",
-    grand_total: null,
+    grand_total: 4118,
     origin_countries: [
       {
         name: "Dem. Rep. of the Congo",
@@ -211,7 +211,7 @@ const resettlementData = [
 
   {  
     dest_country: "Chile",
-    grand_total: null,
+    grand_total: 95,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -223,7 +223,7 @@ const resettlementData = [
 
   {
     dest_country: "Croatia",
-    grand_total: null,
+    grand_total: 157,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -235,7 +235,7 @@ const resettlementData = [
 
   {
     dest_country: "Cyprus",
-    grand_total: null,
+    grand_total: 6,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -247,7 +247,7 @@ const resettlementData = [
 
   {
     dest_country: "Estonia",
-    grand_total: null,
+    grand_total: 149,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -265,7 +265,7 @@ const resettlementData = [
 
   {
     dest_country: "Finland",
-    grand_total: null,
+    grand_total: 945,
     origin_countries: [
       {
         name: "Sudan",
@@ -325,7 +325,7 @@ const resettlementData = [
 
   {
     dest_country: "France",
-    grand_total: null,
+    grand_total: 5207,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -385,7 +385,7 @@ const resettlementData = [
 
   {
     dest_country: "Germany",
-    grand_total: null,
+    grand_total: 3867,
     origin_countries: [
       {
         name: "Eritrea",
@@ -433,7 +433,7 @@ const resettlementData = [
 
   {
     dest_country: "Iceland",
-    grand_total: null,
+    grand_total: 71,
     origin_countries: [
       {
         name: "Iraq",
@@ -457,7 +457,7 @@ const resettlementData = [
 
   {
     dest_country: "Ireland",
-    grand_total: null,
+    grand_total: 308,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -475,7 +475,7 @@ const resettlementData = [
 
   {
     dest_country: "Italy",
-    grand_total: null,
+    grand_total: 1392,
     origin_countries: [
       {
         name: "All others",
@@ -505,7 +505,7 @@ const resettlementData = [
 
   {
     dest_country: "Japan",
-    grand_total: null,
+    grand_total: 39,
     origin_countries: [
       {
         name: "Myanmar",
@@ -517,7 +517,7 @@ const resettlementData = [
   
   {
     dest_country: "Latvia",
-    grand_total: null,
+    grand_total: 65,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -529,7 +529,7 @@ const resettlementData = [
 
   {
     dest_country: "Lithuania",
-    grand_total: null,
+    grand_total: 200,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -547,7 +547,7 @@ const resettlementData = [
 
   {
     dest_country: "Luxembourg",
-    grand_total: null,
+    grand_total: 219,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -571,7 +571,7 @@ const resettlementData = [
 
   {
     dest_country: "Malta",
-    grand_total: null,
+    grand_total: 1,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -583,7 +583,7 @@ const resettlementData = [
 
   {
     dest_country: "Monaco",
-    grand_total: null,
+    grand_total: 30,
     origin_countries: [
       {
         name: "Iraq",
@@ -595,7 +595,7 @@ const resettlementData = [
 
   {
     dest_country: "Netherlands",
-    grand_total: null,
+    grand_total: 3103,
     origin_countries: [
       {
         name: "Somalia",
@@ -655,7 +655,7 @@ const resettlementData = [
 
   {
     dest_country: "New Zealand",
-    grand_total: null,
+    grand_total: 1309,
     origin_countries: [
       {
         name: "Eritrea",
@@ -715,7 +715,7 @@ const resettlementData = [
 
   {
     dest_country: "Norway",
-    grand_total: null,
+    grand_total: 3136,
     origin_countries: [
       {
         name: "All others",
@@ -769,7 +769,7 @@ const resettlementData = [
 
   {
     dest_country: "Portugal",
-    grand_total: null,
+    grand_total: 229,
     origin_countries: [
       {
         name: "Somalia",
@@ -799,7 +799,7 @@ const resettlementData = [
 
   {
     dest_country: "Rep. of Korea",
-    grand_total: null,
+    grand_total: 66,
     origin_countries: [
       {
         name: "All others",
@@ -817,7 +817,7 @@ const resettlementData = [
 
   {
     dest_country: "Romania",
-    grand_total: null,
+    grand_total: 48,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -829,7 +829,7 @@ const resettlementData = [
 
   {
     dest_country: "Slovenia",
-    grand_total: null,
+    grand_total: 67,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -841,7 +841,7 @@ const resettlementData = [
 
   {
     dest_country: "Spain",
-    grand_total: null,
+    grand_total: 1373,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -859,7 +859,7 @@ const resettlementData = [
 
   {
     dest_country: "Sweden",
-    grand_total: null,
+    grand_total: 5955,
     origin_countries: [
       {
         name: "Myanmar",
@@ -925,7 +925,7 @@ const resettlementData = [
 
   {
     dest_country: "Switzerland",
-    grand_total: null,
+    grand_total: 1332,
     origin_countries: [
       {
         name: "Syrian Arab Rep.",
@@ -955,7 +955,7 @@ const resettlementData = [
 
   {
     dest_country: "United Kingdom of Great Britain and Northern Ireland",
-    grand_total: null,
+    grand_total: 9218,
     origin_countries: [
       {
         name: "Eritrea",
@@ -1015,7 +1015,7 @@ const resettlementData = [
 
   {
     dest_country: "United States of America",
-    grand_total: null,
+    grand_total: 26782,
     origin_countries: [
       {
         name: "Iraq",
@@ -1087,7 +1087,7 @@ const resettlementData = [
 
   {
     dest_country: "Uruguay",
-    grand_total: null,
+    grand_total: 16,
     origin_countries: [
       {
         name: "All others",
