@@ -56,8 +56,10 @@ describe('Server File', () => {
 
     it('should add a new demograhics entry for an origin country when a post request is made', (done) => {
       const newDemographic = {
-        dest_country: 'La La Land', 
-        grand_total: '1200'
+        origin_country: 'Honduras',
+        individual_total: '5000',
+        total_minors: '2100',
+        dest_country_id: 1,
       }
       chai.request(app)
         .post('/api/v1/demographics')
@@ -72,19 +74,9 @@ describe('Server File', () => {
     it('should return 422 if new demographic entry is incomplete', (done) => {
       const newDemographic = {
         origin_country: 'Honduras',
-        individual_total: '5000',
-        total_minors: '2100',
-        dest_country_id: 1,
+        individual_total: '5000'
       }
-
-      for (let requiredParameter of ['origin_country', 'individual_total', 'total_minors', 'dest_country_id']) {
-        if (!newDemographic[requiredParameter]) {
-          return response
-            .status(422)
-            .send({ error: `Expected format: { title: <String>, author: <String> }. You're missing a "${requiredParameter}" property.` });
-        }
-      }
-
+  
       chai.request(app)
         .post('/api/v1/demographics')
         .send(newDemographic)
