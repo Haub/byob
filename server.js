@@ -14,7 +14,6 @@ app.get('/', (request, response) => {
   response.send('Welcome to BYOB')
 });
 
-
 //works!
 app.get('/api/v1/countries', (request, response) => {
   database('countries').select()
@@ -22,14 +21,40 @@ app.get('/api/v1/countries', (request, response) => {
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
 });
 
+//works
 app.post('/api/v1/countries', (request, response) => {
   const newCountry = request.body;
-  console.log(request.body)
+  
+  for (let requiredParameter of ['dest_country', 'grand_total']) {
+    if (!newCountry[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { title: <String>, author: <String> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
   
   database('countries').insert(newCountry, 'id')
     .then((country) => 
       response.status(201).json({message: `New country with id of ${country[0]} inserted successfully.`}))
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
+});
+
+
+app.get('/api/v1/countries/:id', (request, response) => {
+  const { id } = request.params;
+  database('countries').where('id', id).select()
+    .then(countries => {
+      if (countries.length) {
+        response.status(200).json(countries);
+      } else {
+        response.status(404).json({ 
+          error: `Could not find countries with id ${id}`
+        });
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
 });
 
 //works!
@@ -39,6 +64,7 @@ app.get('/api/v1/demographics', (request, response) => {
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
 });
 
+//works!!
 app.post('/api/v1/demographics', (request, response) => {
   const demographics = request.body;
   
@@ -47,7 +73,7 @@ app.post('/api/v1/demographics', (request, response) => {
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
 });
 
-
+//works!
 app.get('/api/v1/demographics/:id', (request, response) => {
   const { id } = request.params;
   database('demographics').where('id', id).select()
@@ -56,7 +82,7 @@ app.get('/api/v1/demographics/:id', (request, response) => {
         response.status(200).json(demographics);
       } else {
         response.status(404).json({ 
-          error: `Could not find demographics with id ${id}`
+          error: `Could not find demographics entry with id ${id}`
         });
       }
     })
@@ -68,3 +94,5 @@ app.get('/api/v1/demographics/:id', (request, response) => {
 app.listen(3000, () => {
   console.log(`BYOB is running on ${app.get('port')}`);
 });
+
+module.exports = app;

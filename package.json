@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "NODE_ENV=test mocha --exit"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +24,10 @@
   "bugs": {
     "url": "https://github.com/Haub/byob/issues"
   },
-  "homepage": "https://github.com/Haub/byob#readme"
+  "homepage": "https://github.com/Haub/byob#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
 }
