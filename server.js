@@ -14,6 +14,30 @@ app.get('/', (request, response) => {
   response.send('Welcome to BYOB')
 });
 
+app.get('/api/v1/countries', (request, response) => {
+  database('countries').select()
+    .then((countries) => response.status(200).json(countries))
+    .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
+});
+
+app.post('./api/v1/countries', (request, response) => {
+  const country = request.body;
+  database('countries').insert(country, 'id')
+    .then((countryIds) => response.status(200).json({message: `New project with id of ${countryIds[0]} inserted successfully.`, id: `${countryIds[0]}`}))
+    .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
+});
+
+
+app.get('/api/v1/demographics', (request, response) => {
+  database('demographics').select()
+    .then((demographics) => response.status(200).json(demographics))
+    .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
+});
+
+app.post('/api/v1/demographics', (request, response) => {
+  // database('demographi')
+});
+
 app.listen(3000, () => {
   console.log(`BYOB is running on ${app.get('port')}`);
 });
