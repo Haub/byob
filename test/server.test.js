@@ -54,7 +54,7 @@ describe('Server File', () => {
         done()
     });
 
-    it('should add a new demograhics entry for an origin country when a post request is made', (done) => {
+    it('should add a new demographics entry for an origin country when a post request is made', (done) => {
       const newDemographic = {
         origin_country: 'Honduras',
         individual_total: '5000',
