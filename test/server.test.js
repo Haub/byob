@@ -41,6 +41,19 @@ describe('Server File', () => {
           expect(response).to.have.status(422)
         })
     });
+  });
+  
+  describe('/api/v1/demographics', () => {
+    it('should return a 200 status', (done) => {
+      chai.request(app)
+        .get('/api/v1/demographics')
+        .end((error, response) => {
+          expect(response).to.have.status(200)
+        })
+        done()
+    });
+
+ 
 
 
 
