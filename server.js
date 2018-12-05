@@ -24,7 +24,14 @@ app.get('/api/v1/countries', (request, response) => {
 //works
 app.post('/api/v1/countries', (request, response) => {
   const newCountry = request.body;
-  console.log(request.body)
+  
+  for (let requiredParameter of ['dest_country', 'grand_total']) {
+    if (!newCountry[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { title: <String>, author: <String> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
   
   database('countries').insert(newCountry, 'id')
     .then((country) => 
@@ -87,3 +94,5 @@ app.get('/api/v1/demographics/:id', (request, response) => {
 app.listen(3000, () => {
   console.log(`BYOB is running on ${app.get('port')}`);
 });
+
+module.exports = app;
