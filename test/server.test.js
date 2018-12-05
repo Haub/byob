@@ -30,6 +30,18 @@ describe('Server File', () => {
         done()
     });
 
+    it('should return 422 if new country is incomplete', (done) => {
+      const newCountry = {
+        dest_country: 'La La Land'
+      }
+      chai.request(app)
+        .post('/api/v1/countries')
+        .send(newCountry)
+        .end((error, response) => {
+          expect(response).to.have.status(422)
+        })
+    });
+
 
 
   });
