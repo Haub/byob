@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return Promise.all([
     knex.schema.createTable('countries', function(table) {
       table.increments('id').primary();
-      table.string('destination_country');
+      table.string('dest_country');
       table.string('grand_total');
 
       table.timestamps(true, true);
@@ -14,8 +14,8 @@ exports.up = function(knex, Promise) {
       table.string('origin_country');
       table.string('individual_total');
       table.string('total_minors');
-      table.integer('country_id').unsigned()
-      table.foreign('country_id')
+      table.integer('dest_country_id').unsigned()
+      table.foreign('dest_country_id')
         .references('countries.id');
 
       table.timestamps(true, true);
@@ -26,6 +26,6 @@ exports.up = function(knex, Promise) {
 exports.down = function(knex, Promise) {
   return Promise.all([
     knex.schema.dropTable('demographics'),
-    knex.schema.dropTable('countries'),
+    knex.schema.dropTable('countries')
   ]);
 };
