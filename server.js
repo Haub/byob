@@ -14,6 +14,7 @@ app.get('/', (request, response) => {
   response.send('Welcome to BYOB')
 });
 
+
 //works!
 app.get('/api/v1/countries', (request, response) => {
   database('countries').select()
