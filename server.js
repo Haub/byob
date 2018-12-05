@@ -22,10 +22,10 @@ app.get('/api/v1/countries', (request, response) => {
 });
 
 app.post('/api/v1/countries', (request, response) => {
-  const country = request.body;
+  const newCountry = request.body;
   console.log(request.body)
   
-  database('countries').insert(country, 'id')
+  database('countries').insert(newCountry, 'id')
     .then((country) => 
       response.status(201).json({message: `New country with id of ${country[0]} inserted successfully.`}))
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
@@ -44,6 +44,24 @@ app.post('/api/v1/demographics', (request, response) => {
   database('demographics').insert(demographics, 'id')
     .then((demographicsIds) => response.status(201).json({message: `New demographics with id of ${demographicsIds[0]} inserted successfully.`}))
     .catch((error) => response.status(500).send({error: `Error: ${error.message}`}))
+});
+
+
+app.get('/api/v1/demographics/:id', (request, response) => {
+  const { id } = request.params;
+  database('demographics').where('id', id).select()
+    .then(demographics => {
+      if (demographics.length) {
+        response.status(200).json(demographics);
+      } else {
+        response.status(404).json({ 
+          error: `Could not find demographics with id ${id}`
+        });
+      }
+    })
+    .catch(error => {
+      response.status(500).json({ error });
+    });
 });
 
 app.listen(3000, () => {
