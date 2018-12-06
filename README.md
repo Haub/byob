@@ -58,11 +58,9 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
   `GET`
   
-#### URL Params:
+#### Required URL Params:
 
-  **Required:**
-
-  `id=[integer]`
+  * `id=[integer]`
 
 #### Success Response:
 
@@ -85,12 +83,9 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
   `PUT`
   
-#### URL Params:
+#### Required URL Params:
 
-   **Required:**
-
-  `id=[integer]`
-
+  * `id=[integer]`
 
 #### Success Response:
 
@@ -110,9 +105,7 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   
   `GET`
   
-#### URL Params**
-
-  **Required:**
+#### Required URL Params:
 
   None
 
@@ -138,15 +131,12 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
   `POST`
   
-#### Data Params
-
-  **Required:
+#### Required URL Params:
  
   * `origin_country`
   * `individual_total`
   * `total_minors`
   * `dest_country_id`
-
 
 #### Success Response:
 
@@ -165,12 +155,9 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
   `GET`
   
-#### URL Params
-
-  **Required:**
+#### Required URL Params:
 
   `id=[integer]`
-
 
 #### Success Response:
 
@@ -195,11 +182,9 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
   `PUT`
   
-#### URL Params
-  
-  **Required:**
- 
-  `id=[integer]`
+#### Required URL Params:
+
+  * `id=[integer]`
 
 #### Success Response:
 
