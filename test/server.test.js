@@ -1,4 +1,3 @@
-
 process.env.NODE_ENV = 'test';
 
 const chai = require('chai');
@@ -38,10 +37,8 @@ describe('Server File', () => {
         .post('/api/v1/countries')
         .send(newCountry)
         .end((error, response) => {
-          console.log(response.body)
           expect(response).to.have.status(201)
           expect(response.body.message).to.equal(`New country with id of ${response.body.id} inserted successfully.`)
-          
         })
         done()
     });
@@ -70,7 +67,7 @@ describe('Server File', () => {
         done()
     });
 
-    it.skip('should add a new demographics entry for an origin country when a post request is made', (done) => {
+    it('should add a new demographics entry for an origin country when a post request is made', (done) => {
       const newDemographic = {
         origin_country: 'Honduras',
         individual_total: '5000',
@@ -82,7 +79,7 @@ describe('Server File', () => {
         .send(newDemographic)
         .end((error, response) => {
           expect(response).to.have.status(201)
-          expect(response.body.message).to.equal(`New country with id of ${country[0]} inserted successfully.`)
+          expect(response.body.message).to.equal(`New demographics with id of ${response.body.id} inserted successfully.`)
         })
         done()
     });

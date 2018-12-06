@@ -40,7 +40,7 @@ app.post('/api/v1/countries', (request, response) => {
   database('countries').insert(newCountry, 'id')
     .then((country) => 
       response.status(201).json({
-        message: `New country with id of ${country[0]} inserted successfully.`
+        message: `New country with id of ${country[0]} inserted successfully.`, id: country[0]
       })
     )
     .catch((error) => 
@@ -129,7 +129,7 @@ app.post('/api/v1/demographics', (request, response) => {
   database('demographics').insert(demographics, 'id')
     .then((demographicsIds) => 
       response.status(201).json({
-        message: `New demographics with id of ${demographicsIds[0]} inserted successfully.`
+        message: `New demographics with id of ${demographicsIds[0]} inserted successfully.`, id: demographicsIds[0]
       })
     )
     .catch((error) => 
