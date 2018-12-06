@@ -45,6 +45,28 @@
   **Code:** 422 <br />
   **Content:** `{ error: Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a property.}`
 
+#### Method:
+
+  `PUT`
+  
+#### URL Params:
+
+   **Required:**
+
+  `id=[integer]`
+
+
+#### Success Response:
+
+  **Code:** 202 <br />
+  **Content:** 
+    `{ message: Country with id of 12 changed successfully. }`
+ 
+#### Error Response:
+
+  **Code:** 404 <br />
+  **Content:** 
+    `{ error: Could not find countries with id 15 }`
 
 ## URL: '/api/v1/countries/:id'
 
@@ -74,31 +96,6 @@
 
   **Code:** 404 <br />
   **Content:** `{ error: Could not find countries with id 15}`
-
-## URL: '/api/v1/countries'
-
-#### Method:
-
-  `PUT`
-  
-#### URL Params:
-
-   **Required:**
-
-  `id=[integer]`
-
-
-#### Success Response:
-
-  **Code:** 202 <br />
-  **Content:** 
-    `{ message: Country with id of 12 changed successfully. }`
- 
-#### Error Response:
-
-  **Code:** 404 <br />
-  **Content:** 
-    `{ error: Could not find countries with id 15 }`
 
 ## URL: '/api/v1/demographics/'
 
@@ -154,9 +151,8 @@
 
   **Code:** 422 <br />
   **Content:** `{ error: Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You're missing a required parameter property.}`
-
-
-## URL: '/api/v1/countries/:id'
+  
+## URL: '/api/v1/demographics/:id'
 
 #### Method:
 
@@ -187,8 +183,6 @@
 
   **Code:** 404 <br />
   **Content:** `{ error: Could not find demographics entry with id 15}`
-
-## URL: '/api/v1/countries'
 
 #### Method:
 
