@@ -1,10 +1,24 @@
+
+process.env.NODE_ENV = 'test';
+
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const app = require('../server.js')
+const app = require('../server.js');
 const expect = chai.expect;
+const should = chai.should;
+const config = require('../knexfile')['test'];
+const database = require('knex')(config);
+
 chai.use(chaiHttp);
 
 describe('Server File', () => {
+
+  beforeEach(() =>
+   database.migrate
+     .rollback()
+     .then(() => database.migrate.latest())
+     .then(() => database.seed.run()));
+
   describe('/api/v1/countries', () => {
     it('should return a 200 status', (done) => {
       chai.request(app)
@@ -24,8 +38,10 @@ describe('Server File', () => {
         .post('/api/v1/countries')
         .send(newCountry)
         .end((error, response) => {
+          console.log(response.body)
           expect(response).to.have.status(201)
-          // expect().to.deep.include(newCountry)
+          expect(response.body.message).to.equal(`New country with id of ${response.body.id} inserted successfully.`)
+          
         })
         done()
     });
@@ -54,7 +70,7 @@ describe('Server File', () => {
         done()
     });
 
-    it('should add a new demographics entry for an origin country when a post request is made', (done) => {
+    it.skip('should add a new demographics entry for an origin country when a post request is made', (done) => {
       const newDemographic = {
         origin_country: 'Honduras',
         individual_total: '5000',
@@ -66,7 +82,7 @@ describe('Server File', () => {
         .send(newDemographic)
         .end((error, response) => {
           expect(response).to.have.status(201)
-          // expect().to.deep.include(newCountry)
+          expect(response.body.message).to.equal(`New country with id of ${country[0]} inserted successfully.`)
         })
         done()
     });
