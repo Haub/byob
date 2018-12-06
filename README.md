@@ -1,4 +1,12 @@
 # BYOB
+
+BYOB is a backend application with a queriable dataset derived from the UNHCR. This detaset includes 2017 Refugee Resettlement data. When queried, this API can yield the total number of refugees resettled into specific countries, the total number of refugees resettled from specific countries, and the total number of minors who were resettled from those specific countries. 
+
+See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
+
+[![Build Status](https://travis-ci.org/Haub/byob.svg?branch=master)](https://travis-ci.org/Haub/byob)
+
+## Documentation: 
   
 ## URL: `/api/v1/countries/`
 
