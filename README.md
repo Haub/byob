@@ -45,29 +45,6 @@
   **Code:** 422 <br />
   **Content:** `{ error: Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a property.}`
 
-#### Method:
-
-  `PUT`
-  
-#### URL Params:
-
-   **Required:**
-
-  `id=[integer]`
-
-
-#### Success Response:
-
-  **Code:** 202 <br />
-  **Content:** 
-    `{ message: Country with id of 12 changed successfully. }`
- 
-#### Error Response:
-
-  **Code:** 404 <br />
-  **Content:** 
-    `{ error: Could not find countries with id 15 }`
-
 ## URL: '/api/v1/countries/:id'
 
 #### Method:
@@ -96,6 +73,29 @@
 
   **Code:** 404 <br />
   **Content:** `{ error: Could not find countries with id 15}`
+  
+ #### Method:
+
+  `PUT`
+  
+#### URL Params:
+
+   **Required:**
+
+  `id=[integer]`
+
+
+#### Success Response:
+
+  **Code:** 202 <br />
+  **Content:** 
+    `{ message: Country with id of 12 changed successfully. }`
+ 
+#### Error Response:
+
+  **Code:** 404 <br />
+  **Content:** 
+    `{ error: Could not find countries with id 15 }`
 
 ## URL: '/api/v1/demographics/'
 
