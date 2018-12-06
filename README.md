@@ -1,6 +1,6 @@
 # BYOB
   
-### URL: `/api/v1/countries/`
+## URL: `/api/v1/countries/`
 
 #### Methods:
 
@@ -46,7 +46,7 @@
   **Content:** `{ error: Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a property.}`
 
 
-### URL: '/api/v1/countries/:id'
+## URL: '/api/v1/countries/:id'
 
 #### Method:
 
@@ -75,7 +75,7 @@
   **Code:** 404 <br />
   **Content:** `{ error: Could not find countries with id 15}`
 
-### URL: '/api/v1/countries'
+## URL: '/api/v1/countries'
 
 #### Method:
 
@@ -100,10 +100,7 @@
   **Content:** 
     `{ error: Could not find countries with id 15 }`
 
-### URL: '/api/v1/countries'
-
-
-### URL: '/api/v1/demographics/'
+## URL: '/api/v1/demographics/'
 
 #### Method:
   
@@ -159,7 +156,7 @@
   **Content:** `{ error: Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You're missing a required parameter property.}`
 
 
-### URL: '/api/v1/countries/:id'
+## URL: '/api/v1/countries/:id'
 
 #### Method:
 
@@ -191,7 +188,7 @@
   **Code:** 404 <br />
   **Content:** `{ error: Could not find demographics entry with id 15}`
 
-### URL: '/api/v1/countries'
+## URL: '/api/v1/countries'
 
 #### Method:
 
