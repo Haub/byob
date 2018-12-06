@@ -7,13 +7,13 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
 ## Documentation: 
   
-## URL: `/api/v1/countries/`
+### URL: `/api/v1/countries/`
 
 #### Methods:
 
   `GET`
   
-##### Required URL Params:
+#### Required URL Params:
   None
 
 #### Success Response:
@@ -41,7 +41,7 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   * `dest_country`
   * `grand_total`
 
-##### Success Response:
+#### Success Response:
 
   **Code:** 200 <br />
   **Content:** 
@@ -52,7 +52,7 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   **Code:** 422 <br />
   **Content:** `{ error: Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a property.}`
 
-## URL: '/api/v1/countries/:id'
+### URL: '/api/v1/countries/:id'
 
 #### Method:
 
@@ -81,7 +81,7 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   **Code:** 404 <br />
   **Content:** `{ error: Could not find countries with id 15}`
   
- #### Method:
+#### Method:
 
   `PUT`
   
@@ -104,7 +104,7 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   **Content:** 
     `{ error: Could not find countries with id 15 }`
 
-## URL: '/api/v1/demographics/'
+### URL: '/api/v1/demographics/'
 
 #### Method:
   
@@ -159,7 +159,7 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   **Code:** 422 <br />
   **Content:** `{ error: Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You're missing a required parameter property.}`
   
-## URL: '/api/v1/demographics/:id'
+### URL: '/api/v1/demographics/:id'
 
 #### Method:
 
@@ -201,13 +201,13 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
  
   `id=[integer]`
 
-### Success Response:
+#### Success Response:
 
   **Code:** 202 <br />
   **Content:** 
     `{message: Demographics entry with id of 12 changed successfully.}`
  
-### Error Response:**
+#### Error Response:**
 
   **Code:** 404 <br />
   **Content:** `{ error: Could not find countries with id 15}`
