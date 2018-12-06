@@ -1,28 +1,15 @@
-**BYOB**
-----
-
-* **Methods:**
+# BYOB
   
-  <_The request type_>
+## URL: `/api/v1/countries/`
 
-  `GET` | `POST` | `DELETE` | `PUT`
-  
-
-* **URL**
-
-  '/api/v1/countries/'
-
-* **Method:**
+### Methods:
 
   `GET`
   
-*  **URL Params**
+### Required URL Params
+None
 
-   **Required:**
- 
-  None
-
-* **Success Response:**
+### Success Response:
 
   * **Code:** 200 <br />
     **Content:** 
@@ -34,52 +21,42 @@
         "updated_at": "2018-12-05T23:53:01.403Z"
     },`
  
-* **Error Response:**
+### Error Response:**
+None
 
-  None
-
-  * **Method:**
+### Method:**
 
   `POST`
   
-*  **Data Params**
+### Required URL Params
+  dest_country
+  grand_total
 
-   **Required:**
- 
-  `{
-      "dest_country": "Peru",
-      "grand_total": "1050"
-  },`
-
-
-* **Success Response:**
+### Success Response:
 
   * **Code:** 200 <br />
     **Content:** 
     `{message: `New country with id of 43 inserted successfully.`}`
  
-* **Error Response:**
+### Error Response:
 
   * **Code:** 422 <br />
     **Content:** `{ error: `Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a property.`}`
 
 
-* **URL**
+## URL: '/api/v1/countries/:id'
 
-  '/api/v1/countries/:id'
-
-* **Method:**
+### Method:**
 
   `GET`
   
-*  **URL Params**
+### URL Params**
 
-   **Required:**
+### Required:**
  
   `id=[integer]`
 
-
-* **Success Response:**
+### Success Response:**
 
   * **Code:** 200 <br />
     **Content:** 
@@ -91,57 +68,51 @@
         "updated_at": "2018-12-05T23:53:01.403Z"
     },`
  
-* **Error Response:**
+### Error Response:**
 
   * **Code:** 404 <br />
     **Content:** `{ error: `Could not find countries with id 15`}`
 
-* **URL**
+## URL: '/api/v1/countries'
 
-  '/api/v1/countries'
-
-* **Method:**
+### Method:**
 
   `PUT`
   
-*  **URL Params**
+### URL Params**
 
    **Required:**
  
   `id=[integer]`
 
 
-* **Success Response:**
+### Success Response:**
 
   * **Code:** 202 <br />
     **Content:** 
     `{message: `Country with id of ${id} changed successfully.`}`
  
-* **Error Response:**
+### Error Response:**
 
   * **Code:** 404 <br />
     **Content:** `{ error: `Could not find countries with id 15`}`
 
-* **URL**
-
-  '/api/v1/countries'
+## URL: '/api/v1/countries'
 
 
-* **URL**
+## URL: '/api/v1/demographics/'
 
-  '/api/v1/demographics/'
-
-* **Method:**
+### Method:**
 
   `GET`
   
-*  **URL Params**
+### URL Params**
 
    **Required:**
  
   None
 
-* **Success Response:**
+### Success Response:**
 
   * **Code:** 200 <br />
     **Content:** 
@@ -155,15 +126,15 @@
         "updated_at": "2018-12-05T23:53:01.403Z"
     },`
  
-* **Error Response:**
+### Error Response:**
 
   None
 
-  * **Method:**
+### Method:**
 
   `POST`
   
-*  **Data Params**
+### Data Params**
 
    **Required:**
  
@@ -175,34 +146,32 @@
   },`
 
 
-* **Success Response:**
+### Success Response:**
 
   * **Code:** 201 <br />
     **Content:** 
     `{message: `New demograpics with id of 4 inserted successfully.`}`
  
-* **Error Response:**
+### Error Response:**
 
   * **Code:** 422 <br />
     **Content:** `{ error: `Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You're missing a required parameter property.`}`
 
 
-* **URL**
+## URL: '/api/v1/countries/:id'
 
-  '/api/v1/countries/:id'
-
-* **Method:**
+### Method:**
 
   `GET`
   
-*  **URL Params**
+### URL Params**
 
    **Required:**
  
   `id=[integer]`
 
 
-* **Success Response:**
+### Success Response:**
 
   * **Code:** 200 <br />
     **Content:** 
@@ -216,33 +185,31 @@
         "updated_at": "2018-12-05T23:53:01.403Z"
     },`
  
-* **Error Response:**
+### Error Response:**
 
   * **Code:** 404 <br />
     **Content:** `{ error: `Could not find demographics entry with id 15`}`
 
-* **URL**
+## URL: '/api/v1/countries'
 
-  '/api/v1/countries'
-
-* **Method:**
+### Method:**
 
   `PUT`
   
-*  **URL Params**
+### URL Params**
 
    **Required:**
  
   `id=[integer]`
 
 
-* **Success Response:**
+### Success Response:**
 
   * **Code:** 202 <br />
     **Content:** 
     `{message: `Demographics entry with id of 12 changed successfully.`}`
  
-* **Error Response:**
+### Error Response:**
 
   * **Code:** 404 <br />
     **Content:** `{ error: `Could not find countries with id 15`}`
