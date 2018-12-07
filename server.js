@@ -193,8 +193,6 @@ app.put('/api/v1/demographics/:id', (request, response) => {
     });
 })
 
-app.listen(3000, () => {
-  console.log(`BYOB is running on ${app.get('port')}`);
-});
+app.listen(process.env.PORT || port);
 
 module.exports = app;
