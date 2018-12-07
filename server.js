@@ -189,7 +189,7 @@ app.put('/api/v1/demographics/:id', (request, response) => {
     });
 })
 
-app.listen(3000, () => {
+app.listen('port', () => {
   console.log(`BYOB is running on ${app.get('port')}`);
 });
 
