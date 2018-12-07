@@ -19,11 +19,13 @@ describe('Server File', () => {
      .then(() => database.seed.run()));
 
   describe('/api/v1/countries', () => {
-    it('should return a 200 status', (done) => {
+    it('should successfully return the countries', (done) => {
       chai.request(app)
         .get('/api/v1/countries')
         .end((error, response) => {
           expect(response).to.have.status(200)
+          // data type of the response - array, json, length
+          // dig into database and expect response to include all
         })
         done()
     });
@@ -52,6 +54,7 @@ describe('Server File', () => {
         .send(newCountry)
         .end((error, response) => {
           expect(response).to.have.status(422)
+          // check that the error message string is coming through
         })
         done()
     });
