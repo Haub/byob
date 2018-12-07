@@ -189,6 +189,6 @@ app.put('/api/v1/demographics/:id', (request, response) => {
     });
 })
 
-app.listen(process.env.PORT || port);
+app.listen(process.env.PORT || 3000);
 
 module.exports = app;
