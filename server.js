@@ -10,10 +10,6 @@ app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || 3000);
 
-app.get('/', (request, response) => { 
-  response.send('Welcome to BYOB')
-});
-
 app.get('/api/v1/countries', (request, response) => {
   database('countries').select()
     .then((countries) => 
