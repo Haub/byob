@@ -100,16 +100,28 @@ app.put('/api/v1/countries/:id', (request, response) => {
 })
 
 app.get('/api/v1/demographics', (request, response) => {
-  database('demographics').select()
-    .then((demographics) => 
-      response.status(200).json(demographics)
-    )
-    .catch((error) => 
-      response.status(500).send({
-        error: `Error: ${error.message}`
-      })
-    )
+  if(request.query.origin_country) {
+  console.log(request.query)
+    let countryQuery = request.query.origin_country
+    
+    database('demographics').where('origin_country', countryQuery).select()
+    .then(country => {
+      response.status(200).json(country)
+    })
+
+  }else {
+    database('demographics').select()
+      .then((demographics) => 
+        response.status(200).json(demographics)
+      )
+      .catch((error) => 
+        response.status(500).send({
+          error: `Error: ${error.message}`
+        })
+      )
+  }
 });
+
 
 app.post('/api/v1/demographics', (request, response) => {
   const demographics = request.body;
