@@ -74,8 +74,17 @@ app.delete('/api/v1/countries/:id', (request, response) => {
 
 app.put('/api/v1/countries/:id', (request, response) => {
   const { id } = request.params;
+  const newCountry = request.body;
+  
+  for (let requiredParameter of ['dest_country', 'grand_total']) {
+    if (!newCountry[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
 
-  database('countries').where('id', id).update(request.body)
+  database('countries').where('id', id).update(newCountry)
     .then(country => {
       response.status(202).json({
         message: `Country with id of ${id} changed successfully.`
