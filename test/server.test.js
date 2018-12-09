@@ -34,7 +34,7 @@ describe('Server File', () => {
       const newCountry = {
         dest_country: 'La La Land', 
         grand_total: 1200
-      }
+      };
       
       chai.request(app)
         .post('/api/v1/countries')
@@ -49,7 +49,7 @@ describe('Server File', () => {
     it('should return 422 if new country is incomplete', (done) => {
       const newCountry = {
         dest_country: 'La La Land'
-      }
+      };
 
       chai.request(app)
         .post('/api/v1/countries')
@@ -85,11 +85,26 @@ describe('Server File', () => {
       done()
     })
 
+    it('should return a 422 if the PUT request has an incomplete entry', (done) => {
+      const countryToPut = {
+        dest_country: 'USA'
+      };
+
+      chai.request(app)
+        .put('/api/v1/countries/1')
+        .send(countryToPut)
+        .end((error, response) => {
+          expect(response).to.have.status(422)
+          expect(response.body.error).to.equal('Expected format: { dest_country: <String>, grand_total: <Number> }. You\'re missing a "grand_total" property.')
+        })
+      done()
+    });
+
     it('should sucessfully PUT a country', (done) => {
       const countryToPut = {
         dest_country: 'USA',
         grand_total: 100000
-      }
+      };
 
       chai.request(app)
         .put('/api/v1/countries/1')
@@ -99,7 +114,7 @@ describe('Server File', () => {
           expect(response.body.message).to.equal('Country with id of 1 changed successfully.')
         })
       done()
-    })
+    });
   });
 
   describe('/api/v1/demographics', () => {
@@ -120,7 +135,7 @@ describe('Server File', () => {
         individual_total: '5000',
         total_minors: '2100',
         dest_country_id: 1,
-      }
+      };
 
       chai.request(app)
         .post('/api/v1/demographics')
@@ -147,6 +162,7 @@ describe('Server File', () => {
         })
       done()
     });
+
   });
 
   describe('/api/v1/dempgraphics/:id', () => {
@@ -170,13 +186,14 @@ describe('Server File', () => {
           expect(response.body.message).to.equal('Successfully deleted the country with the id of 1.')
         })
       done()
-    })
+    });
 
     it('should sucessfully PUT a demographic', (done) => {
       const demographic = {
         origin_country: 'Somalia',
         individual_total: 20000,
-        total_minors: 2000
+        total_minors: 2000,
+        dest_country_id: 1
       }
 
       chai.request(app)
@@ -187,6 +204,25 @@ describe('Server File', () => {
           expect(response.body.message).to.equal('Demographics entry with id of 1 changed successfully.')
         })
       done()
-    })
-  })
+    });
+
+    it('should return a 422 if the PUT request has an incomplete entry', (done) => {
+      const demographic = {
+        origin_country: 'Somalia',
+        individual_total: 20000,
+        total_minors: 2000,
+      }
+
+      chai.request(app)
+        .put('/api/v1/demographics/1')
+        .send(demographic)
+        .end((error, response) => {
+          expect(response).to.have.status(422)
+          expect(response.body.error).to.equal('Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You\'re missing a "dest_country_id" property.')
+        })
+      done()
+    });
+
+
+  });
 });
