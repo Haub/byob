@@ -74,8 +74,17 @@ app.delete('/api/v1/countries/:id', (request, response) => {
 
 app.put('/api/v1/countries/:id', (request, response) => {
   const { id } = request.params;
+  const newCountry = request.body;
+  
+  for (let requiredParameter of ['dest_country', 'grand_total']) {
+    if (!newCountry[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { dest_country: <String>, grand_total: <Number> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
 
-  database('countries').where('id', id).update(request.body)
+  database('countries').where('id', id).update(newCountry)
     .then(country => {
       response.status(202).json({
         message: `Country with id of ${id} changed successfully.`
@@ -87,14 +96,29 @@ app.put('/api/v1/countries/:id', (request, response) => {
 })
 
 app.get('/api/v1/demographics', (request, response) => {
-  database('demographics').select()
-    .then((demographics) => 
-      response.status(200).json(demographics))
-    .catch((error) => 
-      response.status(500).send({
-        error: `Error: ${error.message}`
-      }))
+
+  if(request.query.origin_country) {
+  console.log(request.query)
+    let countryQuery = request.query.origin_country
+    
+    database('demographics').where('origin_country', countryQuery).select()
+    .then(country => {
+      response.status(200).json(country)
+    })
+
+  }else {
+    database('demographics').select()
+      .then((demographics) => 
+        response.status(200).json(demographics)
+      )
+      .catch((error) => 
+        response.status(500).send({
+          error: `Error: ${error.message}`
+        })
+      )
+  }
 });
+
 
 app.post('/api/v1/demographics', (request, response) => {
   const demographics = request.body;
@@ -150,8 +174,17 @@ app.delete('/api/v1/demographics/:id', (request, response) => {
 
 app.put('/api/v1/demographics/:id', (request, response) => {
   const { id } = request.params;
+  const demographics = request.body
 
-  database('demographics').where('id', id).update(request.body)
+  for (let requiredParameter of ['origin_country', 'individual_total', 'total_minors', 'dest_country_id']) {
+    if (!demographics[requiredParameter]) {
+      return response
+        .status(422)
+        .send({ error: `Expected format: { origin_country: <String>, individual_total: <String>, total_minors: <String>, dest_country_id: <String> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
+
+  database('demographics').where('id', id).update(demographics)
     .then(country => {
       response.status(202).json({
         message: `Demographics entry with id of ${id} changed successfully.`

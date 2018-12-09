@@ -178,6 +178,45 @@ See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
   **Code:** 404 <br />
   **Content:** `{ error: Could not find demographics entry with id 15}`
 
+
+### URL: '/api/v1/demographics/?origin_country=Sudan'
+
+#### Method:
+
+  `GET`
+  
+#### Required URL Params:
+
+  `origin_country=[string]`
+
+#### Success Response:
+
+  **Code:** 200 <br />
+  **Content:** 
+    `{
+        "id": 40,
+        "origin_country": "Sudan",
+        "individual_total": "1005",
+        "total_minors": "340",
+        "dest_country_id": "43""
+        "created_at": "2018-12-05T23:53:01.403Z",
+        "updated_at": "2018-12-05T23:53:01.403Z"
+    },
+    {
+        "id": 40,
+        "origin_country": "Sudan",
+        "individual_total": "3400",
+        "total_minors": "1040",
+        "dest_country_id": "72""
+        "created_at": "2018-12-05T23:53:01.403Z",
+        "updated_at": "2018-12-05T23:53:01.403Z"
+    }`
+ 
+#### Error Response:
+
+  **Code:** 404 <br />
+  **Content:** `{ error: Could not find demographics entry with id 41}`
+
 #### Method:
 
   `PUT`
