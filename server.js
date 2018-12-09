@@ -13,13 +13,11 @@ app.set('port', process.env.PORT || 3000);
 app.get('/api/v1/countries', (request, response) => {
   database('countries').select()
     .then((countries) => 
-      response.status(200).json(countries)
-    )
+      response.status(200).json(countries))
     .catch((error) => 
       response.status(500).send({
         error: `Error: ${error.message}`
-      })
-    )
+      }))
 });
 
 app.post('/api/v1/countries', (request, response) => {
@@ -34,16 +32,14 @@ app.post('/api/v1/countries', (request, response) => {
   }
   
   database('countries').insert(newCountry, 'id')
-    .then((country) => 
+    .then(country => 
       response.status(201).json({
         message: `New country with id of ${country[0]} inserted successfully.`, id: country[0]
-      })
-    )
+      }))
     .catch((error) => 
       response.status(500).send({
         error: `Error: ${error.message}`
-      })
-    )
+      }))
 });
 
 app.get('/api/v1/countries/:id', (request, response) => {
@@ -64,32 +60,23 @@ app.get('/api/v1/countries/:id', (request, response) => {
 });
 
 app.delete('/api/v1/countries/:id', (request, response) => {
-  const { id } = request.params;
-  database('countries').where('id', id).del()
-    .then(country => {
-      if(!country) {
-        response.status(404).json({ 
-          error: `Could not find country with id ${id}`
-        })   
-      }
-      response.status(204).send({
-        message: `Country with id of ${id} deleted successfully.`
+    const { id } = request.params
+
+    database('demographics').where('dest_country_id', id).del()
+      .then(() => database('countries').where('id', id).del())
+      .then(country => {
+          response.status(202).json({message: `Successfully deleted the country with the id of ${id}.`})
       })
-    })
-    .catch(error => {
-      response.status(500).json({ error: `Error: ${error.message}` });
-    });
-})
+      .catch(error => {
+          response.status(500).json({error: error.message})
+      })
+  })
 
 app.put('/api/v1/countries/:id', (request, response) => {
   const { id } = request.params;
+
   database('countries').where('id', id).update(request.body)
     .then(country => {
-      if(!country) {
-        response.status(404).json({
-          error: `Could not find country with id ${id}`
-        })
-      }
       response.status(202).json({
         message: `Country with id of ${id} changed successfully.`
       })
@@ -102,13 +89,11 @@ app.put('/api/v1/countries/:id', (request, response) => {
 app.get('/api/v1/demographics', (request, response) => {
   database('demographics').select()
     .then((demographics) => 
-      response.status(200).json(demographics)
-    )
+      response.status(200).json(demographics))
     .catch((error) => 
       response.status(500).send({
         error: `Error: ${error.message}`
-      })
-    )
+      }))
 });
 
 app.post('/api/v1/demographics', (request, response) => {
@@ -126,13 +111,11 @@ app.post('/api/v1/demographics', (request, response) => {
     .then((demographicsIds) => 
       response.status(201).json({
         message: `New demographics with id of ${demographicsIds[0]} inserted successfully.`, id: demographicsIds[0]
-      })
-    )
+      }))
     .catch((error) => 
       response.status(500).send({
         error: `Error: ${error.message}`
-      })
-    )
+      }))
 });
 
 app.get('/api/v1/demographics/:id', (request, response) => {
@@ -154,32 +137,22 @@ app.get('/api/v1/demographics/:id', (request, response) => {
 });
 
 app.delete('/api/v1/demographics/:id', (request, response) => {
-  const { id } = request.params;
+  const { id } = request.params
+  
   database('demographics').where('id', id).del()
-    .then(country => {
-      if(!country) {
-        response.status(404).json({ 
-          error: `Could not find demographics entry with id ${id}`
-        })   
-      }
-      response.status(204).send({
-        message: `New demographics entry with id of ${id} deleted successfully.`
-      })
-    })
-    .catch(error => {
-      response.status(500).json({ error: `Error: ${error.message}` });
-    });
+  .then(country => {
+    response.status(202).json({message: `Successfully deleted the country with the id of ${id}.`})
+  })
+  .catch(error => {
+    response.status(500).json({error: error.message})
+  })
 })
 
 app.put('/api/v1/demographics/:id', (request, response) => {
   const { id } = request.params;
+
   database('demographics').where('id', id).update(request.body)
     .then(country => {
-      if(!country) {
-        response.status(404).json({
-          error: `Could not find demographics entry with id ${id}`
-        })
-      }
       response.status(202).json({
         message: `Demographics entry with id of ${id} changed successfully.`
       })
