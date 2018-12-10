@@ -5,6 +5,52 @@ BYOB is a backend application with a queriable dataset derived from the UNHCR. T
 
 See it live @ [Heroku](https://byob-ch-mh.herokuapp.com/)
 
+## Getting Started
+
+This is a general guide to setting up a Refugee Resettlement Data development environment on your local machine.
+
+The following guides provide more step-by-step instructions:
+
+## Dependencies
+
+* Express
+* Node
+* PostgreSQL database
+* Knex
+
+
+## Contributions
+
+If you are planning on contributing code to the project, begin by forking this repo using the `Fork` button in the top-right corner of this screen. You should then be able to use `git clone` to copy your fork onto your local machine.
+
+    git clone https://github.com/Haub/byob.git
+
+    cd byob
+
+    npm install
+
+## Testing
+    
+    npm run test 
+
+## Making a change
+
+    git add .
+
+    git commit -m "Add a commit message describing your change here"
+
+    git push origin branch-name-here
+
+## Submitting a pull request
+
+  Use the GitHub UI to submit a new pull request. 
+
+  * Write tests for your code
+  * Make sure the whole test suite is passing
+  * Keep your PR small, with a single focus
+  * Maintain a clean commit history
+  * Use a style consistent with the rest of the codebase
+
 ## Documentation: 
   
 ### URL: `/api/v1/countries/`
