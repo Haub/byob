@@ -10,8 +10,8 @@ module.exports = {
       directory: './db/seeds/dev'
     },
     useNullAsDefault: true,
-
   },
+
   testing: {
     client: 'pg',
     connection: 'postgres://localhost/carstest',
@@ -23,6 +23,7 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
+
   staging: {
     client: 'pg',
     connection: {
@@ -38,6 +39,7 @@ module.exports = {
       tableName: 'knex_migrations'
     }
   },
+  
   production: {
     client: 'pg',
     connection: process.env.DATABASE_URL + `?ssl=true`,
