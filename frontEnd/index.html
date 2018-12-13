@@ -1,9 +1,38 @@
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   </head>
   <body>
     <main>
+      <article class='url-section'>
+        <section class='link'>
+          <button class='get-button all-countries'>Get All Countries</button>
+          <p>https://byob-ch-mh.herokuapp.com/api/v1/countries</p>
+        </section>
+        <section class='link'> 
+          <button class='get-button one-country'>Get One Country</button>
+          <p class='id'>ID:</p>
+          <input type='number' class='country-id input'></input>
+          <p>https://byob-ch-mh.herokuapp.com/api/v1/countries/6</p>
+        </section> 
+        <section class='link'>
+          <button class='get-button all-demographics'>Get All Demographics</button>
+          <p>https://byob-ch-mh.herokuapp.com/api/v1/demographics</p>
+        </section>
+        <section class='link'>
+          <button class='get-button one-demographic'>Get One Demographic</button>
+          <p class='id'>ID:</p>
+          <input type='number' class='demo-id input'></input>
+          </span>
+          <p>https://byob-ch-mh.herokuapp.com/api/v1/demographics/6</p>
+        </section>
+      </article>
+      <article class='response'>
+        <h2>Response</h2>
+      </article>
     </main>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scripts.js"></script>
 </html>
