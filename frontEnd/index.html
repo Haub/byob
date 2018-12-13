@@ -4,6 +4,9 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <h1>Refugee Response's</h1>
+    </header>
     <main>
       <article class='url-section'>
         <section class='link'>
@@ -30,6 +33,53 @@
       </article>
       <article class='response'>
         <h2>Response</h2>
+      </article>
+      <article>
+        <h2>Additional Information:</h2>
+        <section class='info-card'>
+          <h3>POST</h3>
+          <h4>Country</h4>
+          <h5>https://byob-ch-mh.herokuapp.com/api/v1/countries</h5>
+          <p>
+            You can post a new country to the Database by having required parameters
+            of dest_country && grand_total.
+          </p>
+          <h4>Demographic</h4>
+          <h5>https://byob-ch-mh.herokuapp.com/api/v1/demographics</h5>
+          <p>
+            You can post a new country to the Database by having required parameters
+            of origin_country, individual_total, total_minors, dest_country_id.
+          </p>
+        </section>
+        <section class='info-card'>
+          <h3>PUT</h3>
+          <h4>Country</h4>
+          <h5>https://byob-ch-mh.herokuapp.com/api/v1/countries/:id</h5>
+          <p>
+              You can edit and existing entry to the Database by having required parameters of dest_country && grand_total.
+          </p>
+          <h4>Demographics</h4>
+          <h5>https://byob-ch-mh.herokuapp.com/api/v1/demographics/:id</h5>
+          <p>
+            You can edit and existing entry to the Database by having required parameters of 
+            origin_country, individual_total, total_minors, dest_country_id.
+          </p>
+        </section>
+        <section class='info-card'>
+          <h3>DELETE</h3>
+          <h4>Country</h4>
+          <h5>https://byob-ch-mh.herokuapp.com/api/v1/countries/:id</h5>
+          <p>
+              You can delete an existing entry to the Database with the country ID
+              at the end of the url.
+          </p>
+          <h4>Demographics</h4>
+          <h5>https://byob-ch-mh.herokuapp.com/api/v1/demographics/:id</h5>
+          <p>
+              You can delete an existing entry to the Database with the demographic ID
+              at the end of the url.
+          </p>
+        </section>
       </article>
     </main>
   </body>
