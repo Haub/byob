@@ -9,6 +9,7 @@ var cors = require('cors')
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(cors())
+app.use('/', express.static('frontEnd'))
 
 
 app.set('port', process.env.PORT || 3000);
